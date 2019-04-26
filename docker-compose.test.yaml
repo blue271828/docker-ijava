@@ -1,0 +1,14 @@
+version: '3'
+services:
+  ijava:
+    build: .
+    image: ijava
+  sut:
+    image: kiwicom/dgoss
+    environment:
+      GOSS_FILES_PATH: /goss
+      GOSS_FILES_STRATEGY: cp
+    command: /usr/local/bin/dgoss run ijava
+    volumes:
+      - ./goss:/goss
+      - /var/run/docker.sock:/var/run/docker.sock

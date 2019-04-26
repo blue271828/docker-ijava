@@ -1,0 +1,14 @@
+file:
+  /opt/conda/bin/python:
+    exists: true
+    linked-to: python3.7
+    filetype: symlink
+  /opt/ijava/java/ijava-1.2.0.jar:
+    exists: true
+    filetype: file
+  /opt/ijava/java/kernel.json:
+    exists: true
+    filetype: file
+package:
+  openjdk-11-jdk:
+    installed: true
