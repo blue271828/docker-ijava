@@ -1,8 +1,11 @@
-version: '3'
+version: '2'
+
 services:
   ijava:
     build: .
     image: ijava
+    environment:
+      JUPYTER_ENABLE_LAB: 'yes'
   sut:
     image: kiwicom/dgoss
     environment:

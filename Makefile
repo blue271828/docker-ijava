@@ -1,11 +1,8 @@
 # -*- coding: utf-8 -*-
 
 PJTDIR := $(dir $(lastword $(MAKEFILE_LIST)))
-DATDIR := $(PJTDIR)./data/
-
 UID := $(shell id -u)
 GID := $(shell id -g)
-
 DOCKER_IMAGE := ijava
 
 
@@ -31,7 +28,7 @@ ijava:
 	@ $(call run-interactively, -u root, jupyter console --kernel=java)
 
 notebook:
-	@ $(call run-interactively, -p 8888:8888 -e NB_UID=$(UID) -e NB_GID=$(GID), jupyter-notebook)
+	@ $(call run-interactively, -p 8888:8888 -e NB_UID=$(UID) -e NB_GID=$(GID), jupyter-lab)
 
 clean:
 	$(eval CONTAINER_IDS = $(shell docker ps -aq -f ancestor=$(DOCKER_IMAGE)))
