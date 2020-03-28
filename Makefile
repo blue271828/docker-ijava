@@ -16,7 +16,7 @@ define run-interactively
 endef
 
 
-.PHONY: build console ijava notebook clean
+.PHONY: build console ijava ijavalab clean
 
 build:
 	@ docker build -t $(DOCKER_IMAGE) .
@@ -27,7 +27,7 @@ console:
 ijava:
 	@ $(call run-interactively, -u root, jupyter console --kernel=java)
 
-notebook:
+ijavalab:
 	@ $(call run-interactively, -p 8888:8888 -e NB_UID=$(UID) -e NB_GID=$(GID), jupyter-lab)
 
 clean:
