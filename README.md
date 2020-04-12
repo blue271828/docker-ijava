@@ -16,12 +16,12 @@ $ make build
 
 
 
-## Jupyter Notebook
+## Launch Jupyter Lab
 
-You can launch Jupyter Notebook as the following. Since a local URL with a token is displayed, open the URL with your browser.
+You can launch Jupyter Lab as the following. Since a local URL with a token is displayed, open the URL with your browser.
 
 ```bash
-$ make notebook
+$ make ijavalab
 ```
 
 
